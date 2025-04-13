@@ -14,7 +14,8 @@ export default function ProfilePage() {
     return (
         <div>
             <h1>My Profile</h1>
-            <div id='greetings'>Hello {displayName.charAt(0).toUpperCase() + displayName.slice(1).toLowerCase()}</div>                <div>
+            <div id='greetings'>Hello {displayName.charAt(0).toUpperCase() + displayName.slice(1).toLowerCase()}</div>
+            <div>
                     <input 
                     id="firstName" 
                     placeholder="first name"

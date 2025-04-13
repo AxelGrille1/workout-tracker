@@ -1,17 +1,17 @@
-interface ExerciseSet {
+export interface ExerciseSet {
     reps: number;
     charge?: number | "Bodyweight";
     feeling: "Easy" | "Ok" | "Hard" | "Failure";
     notes?: string; // Optional notes for set
 }
 
-interface Exercise {
+export interface Exercise {
     name: string;
     sets: ExerciseSet[];
     notes?: string;
 }
 
-interface Session {
+export interface Session {
     id: string;
     name: string; 
     date: Date;

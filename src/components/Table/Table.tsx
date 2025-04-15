@@ -23,8 +23,37 @@ export default function Table() {
 
         setTableData(newTableData);
     }
-    return (
-        true
-    )
 
+    return (
+        <div className="tableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        {tableData[0].map((_, columnIndex) => (
+                            <th key={`header-${columnIndex}`}>
+                                Column {columnIndex + 1}
+                            </th>
+                        ))}
+                        <th>
+                            <button onClick={addColumn}>+</button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableData.map((row, rowIndex) => (
+                        <TableRow 
+                        key={`row-${rowIndex}`} 
+                        rowData={row} /* Need to implement the TableRow type */
+                        rowIndex={rowIndex} 
+                        />
+                    ))}
+                    <tr>
+                        <td colSpan={tableData[0].length + 1}>
+                            <button onClick={addRow}>Add Row</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    );
 }
